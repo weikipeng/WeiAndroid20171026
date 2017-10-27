@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: "maven"
+//apply plugin: 'java-gradle-plugin'
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.0.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    api 'org.codehaus.groovy:groovy:2.4.11:grooid'
+    compile 'com.android.tools.build:transform-api:1.5.0'
+}
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+//group和version
+group='com.jzb.android'
+version='1.0.0'
+archivesBaseName = 'rvh-gradle-plugin'//插件artifactId
+
+//打包到本地或者远程Maven库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址设置为E:/Maven
+            repository(url: uri('./jzbPlugin'))
+        }
+    }
+}
