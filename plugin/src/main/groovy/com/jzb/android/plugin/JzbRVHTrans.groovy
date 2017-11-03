@@ -62,7 +62,8 @@ public class JzbRVHTrans extends Transform {
 
                 // 获取output目录
                 def dest = outputProvider.getContentLocation(directoryInput.name,
-                        directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)这里写代码片
+                        directoryInput.contentTypes, directoryInput.scopes, Format.DIRECTORY)
+                //这里写代码片
 
                 // 将input的目录复制到output指定目录
                 FileUtils.copyDirectory(directoryInput.file, dest)

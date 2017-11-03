@@ -82,7 +82,3 @@ public class JzbPluginRVH implements Plugin<Project> {
         javaFile.write(content, 'UTF-8');
     }
 }
-
-class MyPlguinTestClass {
-    def str = "默认值";
-}

@@ -11,6 +11,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 //    api 'org.codehaus.groovy:groovy:2.4.11:grooid'
     compile 'com.android.tools.build:transform-api:1.5.0'
+    compile "javassist:javassist:3.12.1.GA"
+    compile 'commons-io:commons-io:2.5'
 }
 
 sourceCompatibility = "1.7"
